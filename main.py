@@ -5,7 +5,8 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from gradient_descent import GradientDescentAlgorithm
 from Simplex_method import Simplex_method
-
+from LR3.LR3 import GeneticAlgorithm
+from LR4.particleswarm.LR4 import ParticleSwarmAlgorithm
 # Функция для корректного выхода из программы
 def on_closing():
     root.quit()   # Завершает главный цикл
@@ -36,5 +37,15 @@ GradientDescentAlgorithm(param_frame, root, ax, canvas)
 param_frame2 = ttk.Frame(notebook)
 notebook.add(param_frame2, text="Решение КП")
 Simplex_method(param_frame2, root, ax, canvas)
+
+# Вкладка для лр3
+param_frame3 = ttk.Frame(notebook)
+notebook.add(param_frame3, text="Генетический алгоритм")
+GeneticAlgorithm(param_frame3,root,ax,canvas)
+
+# Вкладка для лр4
+param_frame4 = ttk.Frame(notebook)
+notebook.add(param_frame4, text="ЛР4")
+ParticleSwarmAlgorithm(param_frame4,root,ax,canvas)
 
 root.mainloop()
