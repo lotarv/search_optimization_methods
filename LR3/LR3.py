@@ -130,9 +130,9 @@ def GeneticAlgorithm(frame, root, ax, canvas):
 
     x_var = tk.DoubleVar(value=100)
     y_var = tk.DoubleVar(value=100)
-    mutation_var = tk.DoubleVar(value=0.1)
-    crossover_var = tk.DoubleVar(value=0.9)
-    stagnation_var = tk.IntVar(value=5)
+    mutation_var = tk.DoubleVar(value=0.3)
+    crossover_var = tk.DoubleVar(value=0.8)
+    stagnation_var = tk.IntVar(value=10)
 
     ttk.Entry(frame, textvariable=x_var).grid(row=2, column=1)
     ttk.Entry(frame, textvariable=y_var).grid(row=3, column=1)

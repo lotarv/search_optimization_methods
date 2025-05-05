@@ -114,6 +114,7 @@ class Swarm (object):
                 finalFunc < self.__globalBestFinalFunc):
             self.__globalBestFinalFunc = finalFunc
             self.__globalBestPosition = position[:]
+        return finalFunc
 
 
     @abstractmethod
