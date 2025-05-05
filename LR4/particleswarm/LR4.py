@@ -143,11 +143,11 @@ def ParticleSwarmAlgorithm(frame, root, ax, canvas):
     ttk.Label(param_frame2, text="Стагнация (итераций)", font=("Helvetica", 10)).grid(row=6, column=0)
 
     iteration = tk.IntVar(value=100)
-    particle = tk.IntVar(value=2000)
+    particle = tk.IntVar(value=200)
     alpha = tk.IntVar(value=2)
     beta = tk.IntVar(value=5)
     inertia = tk.DoubleVar(value=0.5)
-    stagnation_limit = tk.IntVar(value=30)
+    stagnation_limit = tk.IntVar(value=10)
 
     iteration_entry = ttk.Entry(param_frame2, textvariable=iteration)
     particle_entry = ttk.Entry(param_frame2, textvariable=particle)

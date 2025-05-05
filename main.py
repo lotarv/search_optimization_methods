@@ -7,6 +7,8 @@ from gradient_descent import GradientDescentAlgorithm
 from Simplex_method import Simplex_method
 from LR3.LR3 import GeneticAlgorithm
 from LR4.particleswarm.LR4 import ParticleSwarmAlgorithm
+from LR5.LR5 import BeesAlgorithm
+
 # Функция для корректного выхода из программы
 def on_closing():
     root.quit()   # Завершает главный цикл
@@ -47,5 +49,8 @@ GeneticAlgorithm(param_frame3,root,ax,canvas)
 param_frame4 = ttk.Frame(notebook)
 notebook.add(param_frame4, text="ЛР4")
 ParticleSwarmAlgorithm(param_frame4,root,ax,canvas)
-
+# Вкладка для лр5
+param_frame5 = ttk.Frame(notebook)
+notebook.add(param_frame5, text="ЛР5")
+BeesAlgorithm(param_frame5,root,ax,canvas)
 root.mainloop()
