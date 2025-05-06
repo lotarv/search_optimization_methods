@@ -20,16 +20,10 @@ from LR4.particleswarm.swarm import Swarm
 
 
 class Swarm_Rosenbrock(Swarm):
-    """
-    Класс роя частиц для оптимизации функции Розенброка
-    """
     def __init__(self, swarmsize, minvalues, maxvalues, currentVelocityRatio, localVelocityRatio, globalVelocityRatio):
         super().__init__(swarmsize, minvalues, maxvalues, currentVelocityRatio, localVelocityRatio, globalVelocityRatio)
 
     def _finalFunc(self, position):
-        """
-        Целевая функция Розенброка с добавлением штрафа за выход за границы
-        """
         function = sum([100 * (position[i + 1] - position[i] ** 2) ** 2 + (1 - position[i]) ** 2
                         for i in range(len(position) - 1)])
         penalty = self._getPenalty(position, 10000.0)
@@ -49,7 +43,6 @@ def ParticleSwarmAlgorithm(frame, root, ax, canvas):
         return sum([100 * (X[i + 1] - X[i] ** 2) ** 2 + (1 - X[i]) ** 2 for i in range(len(X) - 1)])
 
     def run_optimization():
-        # Генерация сетки для графика целевой функции
         X = np.linspace(x_interval_min.get(), x_interval_max.get(), 200)
         Y = np.linspace(y_interval_min.get(), y_interval_max.get(), 200)
         X, Y = np.meshgrid(X, Y)
@@ -69,8 +62,8 @@ def ParticleSwarmAlgorithm(frame, root, ax, canvas):
         iterCount = iteration.get()
         dimension = 2
         swarmsize = particle.get()
-        minvalues = np.array([-5.12] * dimension)  # Подходит для обеих функций
-        maxvalues = np.array([5.12] * dimension)   # Можно расширить для Розенброка, например, [-30, 30]
+        minvalues = np.array([-5.12] * dimension)
+        maxvalues = np.array([5.12] * dimension)   
 
         currentVelocityRatio = inertia.get()
         localVelocityRatio = alpha.get()

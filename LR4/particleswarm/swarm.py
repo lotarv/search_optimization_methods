@@ -9,9 +9,6 @@ from LR4.particleswarm.particle import Particle
 
 
 class Swarm (object):
-    """
-    Базовый класс для роя частиц. Его надо переопределять для конкретной целевой функции
-    """
     __metaclass__ = ABCMeta
 
     def __init__ (self, 
@@ -63,9 +60,6 @@ class Swarm (object):
 
 
     def nextIteration (self):
-        """
-        Выполнить следующую итерацию алгоритма
-        """
         for particle in self.__swarm:
             particle.nextIteration (self)
 

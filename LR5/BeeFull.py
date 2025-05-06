@@ -83,7 +83,6 @@ class BeeAlgorithm:
         self.target_func = target_func
 
     def initialize_bees(self):
-        # Создаем популяцию, учитывая разведчиков, элитные и перспективные пчелы
         bee_count = self.num_scouts + self.agents_per_perspective * self.num_perspective + self.agents_per_elite * self.num_elite
         bees = []
         for _ in range(bee_count):
@@ -229,3 +228,6 @@ class BeeAlgorithm:
         self.ax.scatter(self.best_bees[0].coords[0], self.best_bees[0].coords[1], self.best_bees[0].fitness, c="red")
         self.canvas.draw()
         return self.best_bees[0]
+    
+
+
