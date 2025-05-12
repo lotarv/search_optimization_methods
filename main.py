@@ -8,7 +8,7 @@ from Simplex_method import Simplex_method
 from LR3.LR3 import GeneticAlgorithm
 from LR4.particleswarm.LR4 import ParticleSwarmAlgorithm
 from LR5.LR5 import BeesAlgorithm
-
+from LR6.ImmuneAlgorithm import ImmuneAlgorithm
 # Функция для корректного выхода из программы
 def on_closing():
     root.quit()   # Завершает главный цикл
@@ -53,4 +53,10 @@ ParticleSwarmAlgorithm(param_frame4,root,ax,canvas)
 param_frame5 = ttk.Frame(notebook)
 notebook.add(param_frame5, text="ЛР5")
 BeesAlgorithm(param_frame5,root,ax,canvas)
+
+# Вкладка для иммунного алгоритма
+param_frame6 = ttk.Frame(notebook)
+notebook.add(param_frame6, text="Иммунный алгоритм")
+ImmuneAlgorithm(param_frame6, root, ax, canvas)
+
 root.mainloop()
