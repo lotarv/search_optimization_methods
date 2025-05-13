@@ -9,6 +9,7 @@ from LR3.LR3 import GeneticAlgorithm
 from LR4.particleswarm.LR4 import ParticleSwarmAlgorithm
 from LR5.LR5 import BeesAlgorithm
 from LR6.ImmuneAlgorithm import ImmuneAlgorithm
+from LR8 import PSO
 # Функция для корректного выхода из программы
 def on_closing():
     root.quit()   # Завершает главный цикл
@@ -58,5 +59,9 @@ BeesAlgorithm(param_frame5,root,ax,canvas)
 param_frame6 = ttk.Frame(notebook)
 notebook.add(param_frame6, text="Иммунный алгоритм")
 ImmuneAlgorithm(param_frame6, root, ax, canvas)
+
+param_frame8 = ttk.Frame(notebook)
+notebook.add(param_frame8, text="ЛР8")
+PSO(param_frame8,root,ax,canvas)
 
 root.mainloop()
